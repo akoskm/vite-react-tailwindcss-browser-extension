@@ -1,0 +1,37 @@
+{
+  "name": "vite-react-tailwindcss-browser-extension",
+  "version": "1.0.0",
+  "description": "A Cross Browser Extension template",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite",
+    "build:manifest:chrome": "mv dist/manifestv3.json dist/manifest.json",
+    "build:background:chrome": "vite build --config vite.chrome.config.ts",
+    "build:js": "vite build --config vite.content.config.ts",
+    "build:web": "tsc && vite build",
+    "build": "NODE_ENV=production run-s build:js build:web",
+    "build:chrome": "NODE_ENV=production run-s build:js build:background:chrome build:web build:manifest:chrome",
+    "package": "zip -r extension.zip dist/*",
+    "preview": "vite preview"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^18.11.9",
+    "@types/react": "^18.0.24",
+    "@types/react-dom": "^18.0.8",
+    "@types/webextension-polyfill": "^0.9.1",
+    "@vitejs/plugin-react": "^2.2.0",
+    "autoprefixer": "^10.4.13",
+    "npm-run-all": "^4.1.5",
+    "postcss": "^8.4.18",
+    "tailwindcss": "^3.2.1",
+    "typescript": "^4.8.4",
+    "vite": "^3.2.2",
+    "webextension-polyfill": "^0.10.0"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
+}

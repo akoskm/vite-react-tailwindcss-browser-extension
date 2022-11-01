@@ -1,0 +1,33 @@
+{
+  "name": "Cat Facts",
+  "description": "Learn random facts about cats",
+  "version": "1.0.0",
+  "manifest_version": 3,
+  "action": {
+    "default_popup": "index.html",
+    "default_title": "Open the popup"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://blank.org/*"
+      ],
+      "run_at": "document_end",
+      "js": [
+        "./index.global.js"
+      ],
+      "css": [
+        "./style.css"
+      ]
+    }
+  ],
+  "permissions": [
+    "storage"
+  ],
+  "background": {
+    "service_worker": "./background.global.js"
+  },
+  "icons": {
+    "128": "logo128.png"
+  }
+}
