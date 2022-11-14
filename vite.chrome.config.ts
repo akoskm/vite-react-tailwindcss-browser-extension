@@ -23,7 +23,7 @@ export default defineConfig({
     lib: {
       formats: ['iife'],
       entry: resolve(__dirname, './background.ts'),
-      name: 'Tweton'
+      name: 'Cat Facts'
     },
     rollupOptions: {
       output: {
