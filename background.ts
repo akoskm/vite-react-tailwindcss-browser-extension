@@ -13,7 +13,7 @@ async function handleMessage({action, value}: Message, response: ResponseCallbac
 
     const { data } = await result.json();
 
-    response({ message: 'Successfully signed up!', data });
+    response({ message: 'success', data });
   } else {
     response({data: null, error: 'Unknown action'});
   }
@@ -23,4 +23,4 @@ async function handleMessage({action, value}: Message, response: ResponseCallbac
 browser.runtime.onMessage.addListener((msg, sender, response) => {
   handleMessage(msg, response);
   return true;
-})
+});
