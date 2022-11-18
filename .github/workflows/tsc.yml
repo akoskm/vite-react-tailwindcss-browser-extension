@@ -1,0 +1,17 @@
+name: 'tsc'
+on: # rebuild any PRs and main branch changes
+  pull_request:
+  push:
+    branches:
+      - main
+
+jobs:
+  install:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out Git repository
+        uses: actions/checkout@v2
+      - name: Install
+        run: npm ci
+      - name: Run TSC
+        run: npx tsc
