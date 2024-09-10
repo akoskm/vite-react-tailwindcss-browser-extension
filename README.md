@@ -26,6 +26,11 @@ Here locate the `dist/` directory and open `manifest.json`
 The generated files are in `dist/`.
 To load the extensions in Google Chrome go to `chrome://extensions/` and click `Load unpacked`. Locate the dist directory and select `manifest.json`.
 
+# Running the extension:
+
+Once the extension has been built and installed in your browser, visit https://blank.org/ to see it running.
+
+
 # Files:
 
  - content-script - UI files
